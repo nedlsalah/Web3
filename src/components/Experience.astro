@@ -1,0 +1,54 @@
+---
+const experiences = [
+  {
+    number: "01",
+    title: "Digital Marketing Specialist & Web Developer",
+    period: "Senior Level",
+    desc: "Managing ad campaigns, building web architectures, and leading creative digital execution."
+  },
+  {
+    number: "02",
+    title: "Digital Marketer & Social Media Manager",
+    period: "Mid Level",
+    desc: "Planning performance ad campaigns, producing visual content, and managing brand channels."
+  },
+  {
+    number: "03",
+    title: "Independent Freelance Specialist",
+    period: "Foundational",
+    desc: "Delivering custom WordPress websites, branding, and marketing strategies for regional clients."
+  }
+];
+---
+<section id="experience" class="py-24 px-6 border-t border-[var(--border-color)]">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div>
+        <span class="font-mono text-xs uppercase tracking-widest text-brand-red">Track Record</span>
+        <h2 class="font-display text-4xl md:text-5xl font-black tracking-tight mt-2">
+          Professional Experience
+        </h2>
+      </div>
+      <p class="opacity-70 max-w-md text-sm md:text-base">
+        Over 7 years of practical experience across digital marketing, web development, and content creation.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      {experiences.map((exp) => (
+        <div class="group p-8 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-secondary)] hover:border-brand-red hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-xl hover:shadow-brand-red/5">
+          <div>
+            <span class="font-mono text-xs px-3 py-1 rounded-full border border-[var(--border-color)] text-brand-red inline-block mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
+              {exp.period}
+            </span>
+            <h3 class="font-display text-xl font-bold group-hover:text-brand-red transition-colors">{exp.title}</h3>
+            <p class="mt-4 text-sm opacity-75 leading-relaxed">{exp.desc}</p>
+          </div>
+          <div class="mt-8 pt-6 border-t border-[var(--border-color)] font-mono text-2xl font-black text-brand-red/30 group-hover:text-brand-red transition-colors">
+            {exp.number}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

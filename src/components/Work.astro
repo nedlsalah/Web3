@@ -1,0 +1,203 @@
+---
+const projects = [
+  {
+    title: "Sanhan Soiree",
+    category: "web",
+    categoryLabel: "Websites",
+    description: "A website for event planning and design services, featuring service information, a portfolio gallery, and inquiry forms.",
+    tech: ["WordPress", "UI/UX"],
+    link: "https://sanhansoiree.com/",
+    image: "https://nedlsalah.github.io/Web/img/work/sanhansoiree.webp"
+  },
+  {
+    title: "Avenir Energy",
+    category: "web",
+    categoryLabel: "Websites",
+    description: "A corporate website for a renewable energy company, developed using WordPress.",
+    tech: ["WordPress", "Energy"],
+    link: "https://avenirenergy.me/",
+    image: "https://nedlsalah.github.io/Web/img/work/avenirenergy.webp"
+  },
+  {
+    title: "Riskonex",
+    category: "web",
+    categoryLabel: "Websites",
+    description: "A corporate website for a risk management consultancy serving the oil and gas and industrial sectors.",
+    tech: ["WordPress", "Security"],
+    link: "https://riskonex.com/",
+    image: "https://nedlsalah.github.io/Web/img/work/riskonex.webp"
+  },
+  {
+    title: "Nobilis Premier",
+    category: "web",
+    categoryLabel: "Websites",
+    description: "A corporate website for a contracting company, showcasing its services and projects.",
+    tech: ["WordPress", "Contracting"],
+    link: "https://nobilis-premier.com/",
+    image: "https://nedlsalah.github.io/Web/img/work/nobilis-premier.webp"
+  },
+  {
+    title: "Hakima Coaching",
+    category: "web",
+    categoryLabel: "Websites",
+    description: "A website for a personal coaching brand, presenting its programs and providing inquiry options.",
+    tech: ["WordPress", "Coaching"],
+    link: "https://hakimacoaching.com/",
+    image: "https://nedlsalah.github.io/Web/img/work/hakimacoaching.webp"
+  },
+  {
+    title: "Fincastra",
+    category: "web",
+    categoryLabel: "Websites",
+    description: "A corporate website for a business consultancy, developed using WordPress.",
+    tech: ["WordPress", "Business"],
+    link: "https://fincastra.com/",
+    image: "https://nedlsalah.github.io/Web/img/work/fincastra.webp"
+  },
+  {
+    title: "Napa",
+    category: "web",
+    categoryLabel: "Websites",
+    description: "A website for home maintenance services in Abu Dhabi, developed using WordPress.",
+    tech: ["WordPress", "Services"],
+    link: "https://napa.ae/",
+    image: "https://nedlsalah.github.io/Web/img/work/napa.webp"
+  },
+  {
+    title: "Graphic Design Portfolio",
+    category: "design",
+    categoryLabel: "Design",
+    description: "A selection of visual identities, digital designs, marketing materials, and print projects.",
+    tech: ["Photoshop", "Branding"],
+    link: "https://www.behance.net/nedlsalah",
+    image: "https://nedlsalah.github.io/Web/img/work/ill-design.svg"
+  },
+  {
+    title: "Photography Portfolio",
+    category: "photography",
+    categoryLabel: "Photography",
+    description: "A curated collection of photography work across different subjects and settings.",
+    tech: ["DSLR", "Visuals"],
+    link: "https://photos.app.goo.gl/fsxX5cDCLViCtxLZ7",
+    image: "https://nedlsalah.github.io/Web/img/work/photography.webp"
+  },
+  {
+    title: "Video Portfolio",
+    category: "video",
+    categoryLabel: "Video",
+    description: "A selection of video production and visual content created for digital platforms.",
+    tech: ["Editing", "Reels"],
+    link: "https://photos.app.goo.gl/USEzX2LLwj4FP4Q19",
+    image: "https://nedlsalah.github.io/Web/img/work/video.webp"
+  }
+];
+---
+<section id="work" class="py-24 px-6 border-t border-[var(--border-color)]">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
+      <div>
+        <span class="font-mono text-xs uppercase tracking-widest text-brand-red">Selected Portfolio</span>
+        <h2 class="font-display text-4xl md:text-5xl font-black tracking-tight mt-2">
+          Featured Work
+        </h2>
+      </div>
+
+      <!-- أزرار التصفية المحدثة -->
+      <div class="flex flex-wrap gap-2" id="work-filters">
+        <button data-filter="all" class="filter-btn active px-3.5 py-2 rounded-lg text-xs font-mono uppercase border border-brand-red bg-brand-red text-white transition-all cursor-pointer">
+          All
+        </button>
+        <button data-filter="web" class="filter-btn px-3.5 py-2 rounded-lg text-xs font-mono uppercase border border-[var(--border-color)] bg-[var(--bg-secondary)] hover:border-brand-red transition-all cursor-pointer">
+          Websites
+        </button>
+        <button data-filter="design" class="filter-btn px-3.5 py-2 rounded-lg text-xs font-mono uppercase border border-[var(--border-color)] bg-[var(--bg-secondary)] hover:border-brand-red transition-all cursor-pointer">
+          Design
+        </button>
+        <button data-filter="photography" class="filter-btn px-3.5 py-2 rounded-lg text-xs font-mono uppercase border border-[var(--border-color)] bg-[var(--bg-secondary)] hover:border-brand-red transition-all cursor-pointer">
+          Photography
+        </button>
+        <button data-filter="video" class="filter-btn px-3.5 py-2 rounded-lg text-xs font-mono uppercase border border-[var(--border-color)] bg-[var(--bg-secondary)] hover:border-brand-red transition-all cursor-pointer">
+          Video
+        </button>
+      </div>
+    </div>
+
+    <!-- شبكة المشاريع: 4 أعمدة -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" id="projects-grid">
+      {projects.map((project) => (
+        <article 
+          data-category={project.category} 
+          class="project-card group rounded-2xl border border-[var(--border-color)] bg-[var(--bg-secondary)] overflow-hidden hover:border-brand-red hover:-translate-y-2 hover:shadow-xl hover:shadow-brand-red/10 transition-all duration-300 flex flex-col justify-between"
+        >
+          <!-- صورة الغلاف -->
+          <a href={project.link} target="_blank" rel="noopener noreferrer" class="h-44 bg-neutral-900 border-b border-[var(--border-color)] relative overflow-hidden block cursor-pointer">
+            <img 
+              src={project.image} 
+              alt={project.title} 
+              loading="lazy" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+            />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+            
+            <span class="absolute top-3 left-3 font-mono text-[10px] uppercase px-2.5 py-1 rounded-full bg-[var(--bg-primary)]/90 backdrop-blur border border-[var(--border-color)] text-brand-red z-20 shadow">
+              {project.categoryLabel}
+            </span>
+          </a>
+
+          <!-- تفاصيل المشروع -->
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <h3 class="font-display text-lg font-bold group-hover:text-brand-red transition-colors">
+                <a href={project.link} target="_blank" rel="noopener noreferrer">{project.title}</a>
+              </h3>
+              <p class="mt-2 text-xs opacity-75 leading-relaxed line-clamp-3">
+                {project.description}
+              </p>
+            </div>
+            
+            <div class="mt-4 pt-3 border-t border-[var(--border-color)] flex items-center justify-between">
+              <div class="flex flex-wrap gap-1">
+                {project.tech.map((item) => (
+                  <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-[var(--bg-primary)] border border-[var(--border-color)] opacity-80">
+                    {item}
+                  </span>
+                ))}
+              </div>
+              
+              <a href={project.link} target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-brand-red hover:underline inline-flex items-center gap-0.5 shrink-0">
+                Live ↗
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- سكريبت التصفية الدقيق -->
+<script>
+  const buttons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.project-card');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => {
+        b.classList.remove('bg-brand-red', 'text-white', 'border-brand-red');
+        b.classList.add('bg-[var(--bg-secondary)]', 'border-[var(--border-color)]');
+      });
+      btn.classList.add('bg-brand-red', 'text-white', 'border-brand-red');
+      btn.classList.remove('bg-[var(--bg-secondary)]', 'border-[var(--border-color)]');
+
+      const filter = btn.getAttribute('data-filter');
+      cards.forEach(card => {
+        const htmlCard = card as HTMLElement;
+        if (filter === 'all' || htmlCard.getAttribute('data-category') === filter) {
+          htmlCard.style.display = 'flex';
+        } else {
+          htmlCard.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>

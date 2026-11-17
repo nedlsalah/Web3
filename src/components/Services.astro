@@ -1,0 +1,61 @@
+---
+const services = [
+  {
+    number: "01",
+    title: "Digital Marketing",
+    description: "Data-driven paid ad campaigns (Meta, Google, TikTok), social media management, and conversion funnels designed to maximize ROI.",
+    tags: ["Paid Ads", "Social Strategy", "Analytics"]
+  },
+  {
+    number: "02",
+    title: "Web Development",
+    description: "Fast, responsive, and SEO-optimized websites built with modern frameworks like Astro, React, and WordPress tailored to your business goals.",
+    tags: ["Frontend", "Astro & React", "WordPress"]
+  },
+  {
+    number: "03",
+    title: "Graphic Design & Branding",
+    description: "Visual identities, social media creatives, UI layouts, and compelling brand storytelling that stand out in crowded feeds.",
+    tags: ["Brand Identity", "Social Creatives", "UI Design"]
+  }
+];
+---
+<section id="services" class="py-24 px-6 border-t border-[var(--border-color)]">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div>
+        <span class="font-mono text-xs uppercase tracking-widest text-brand-red">What I Do</span>
+        <h2 class="font-display text-4xl md:text-5xl font-black tracking-tight mt-2">
+          Core Services
+        </h2>
+      </div>
+      <p class="opacity-70 max-w-md text-sm md:text-base">
+        End-to-end digital execution combining creative design, technical development, and growth marketing.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      {services.map((service) => (
+        <div class="group p-8 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-secondary)] hover:border-brand-red transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-sm text-brand-red font-semibold">{service.number}</span>
+            <h3 class="font-display text-2xl font-bold mt-4 group-hover:text-brand-red transition-colors">
+              {service.title}
+            </h3>
+            <p class="mt-4 text-sm opacity-75 leading-relaxed">
+              {service.description}
+            </p>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-[var(--border-color)] flex flex-wrap gap-2">
+            {service.tags.map((tag) => (
+              <span class="font-mono text-xs px-2.5 py-1 rounded bg-[var(--bg-primary)] border border-[var(--border-color)] opacity-80">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

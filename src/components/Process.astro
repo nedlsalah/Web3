@@ -1,0 +1,44 @@
+---
+const steps = [
+  {
+    step: "01",
+    title: "Discovery & Audit",
+    desc: "Analyzing your brand, audience, competitors, and current digital bottlenecks to define clear KPIs."
+  },
+  {
+    step: "02",
+    title: "Design & Prototyping",
+    desc: "Crafting high-impact visual assets and wireframes focused on user experience and brand identity."
+  },
+  {
+    step: "03",
+    title: "Build & Integrate",
+    desc: "Developing fast, responsive web architectures or setting up precision-targeted ad tracking funnels."
+  },
+  {
+    step: "04",
+    title: "Launch & Scale",
+    desc: "Deploying live, monitoring real-time analytics, and optimizing continuously for maximum ROI."
+  }
+];
+---
+<section id="process" class="py-24 px-6 border-t border-[var(--border-color)]">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="font-mono text-xs uppercase tracking-widest text-brand-red">Workflow</span>
+      <h2 class="font-display text-4xl md:text-5xl font-black tracking-tight mt-2">
+        How I Work
+      </h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {steps.map((item) => (
+        <div class="p-6 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-secondary)] relative">
+          <span class="font-display text-4xl font-black text-brand-red/20">{item.step}</span>
+          <h3 class="font-display text-xl font-bold mt-4">{item.title}</h3>
+          <p class="mt-3 text-sm opacity-75 leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

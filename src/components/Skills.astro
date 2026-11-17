@@ -1,0 +1,59 @@
+---
+const skillGroups = [
+  {
+    category: "Digital Marketing & Ads",
+    icon: `<svg class="w-5 h-5 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg>`,
+    skills: ["Meta Ads", "Google Ads", "TikTok Ads", "SEO", "Google Analytics", "Social Strategy"]
+  },
+  {
+    category: "Web Development",
+    icon: `<svg class="w-5 h-5 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>`,
+    skills: ["WordPress", "Astro", "React", "HTML5/CSS3", "Tailwind CSS", "Responsive Design"]
+  },
+  {
+    category: "Graphic Design & Media",
+    icon: `<svg class="w-5 h-5 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>`,
+    skills: ["Adobe Photoshop", "Adobe Illustrator", "Adobe Lightroom", "Canva", "Video Production", "Photography"]
+  },
+  {
+    category: "Workflow & AI Tools",
+    icon: `<svg class="w-5 h-5 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>`,
+    skills: ["ChatGPT", "Claude", "Notion", "Git & GitHub", "AI Prompting", "Agile Execution"]
+  }
+];
+---
+<section id="skills" class="py-24 px-6 border-t border-[var(--border-color)] bg-[var(--bg-secondary)]/30">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="font-mono text-xs uppercase tracking-widest text-brand-red">Expertise</span>
+      <h2 class="font-display text-4xl md:text-5xl font-black tracking-tight mt-2">
+        Skills & Tools
+      </h2>
+      <p class="mt-4 opacity-70 text-sm md:text-base">
+        The tools I use day to day to plan, build, measure, and ship digital work.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {skillGroups.map((group) => (
+        <div class="group p-6 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-secondary)] hover:border-brand-red hover:-translate-y-2 hover:shadow-xl hover:shadow-brand-red/10 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-5">
+              <div class="p-2.5 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-color)] group-hover:border-brand-red transition-colors" set:html={group.icon} />
+              <h3 class="font-display text-base font-bold group-hover:text-brand-red transition-colors">{group.category}</h3>
+            </div>
+            
+            <ul class="space-y-2.5 pt-2 border-t border-[var(--border-color)]">
+              {group.skills.map((skill) => (
+                <li class="font-mono text-xs opacity-80 flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-brand-red group-hover:scale-125 transition-transform"></span>
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

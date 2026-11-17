@@ -1,0 +1,50 @@
+---
+const testimonials = [
+  {
+    category: "Marketing & Content",
+    quote: "He understands the idea behind the content, not just how it looks. Communication was clear, and he helped us turn our ideas into practical content suited to our needs.",
+    role: "Marketing Manager"
+  },
+  {
+    category: "Website Development",
+    quote: "The website development process was clear and organized. He paid attention to detail, considered our requirements, and worked to ensure the website functioned across mobile and desktop devices.",
+    role: "Business Client"
+  },
+  {
+    category: "Content Creation",
+    quote: "We needed content that reflected our brand identity. Communication was flexible, and he helped us develop materials suited to our social media channels.",
+    role: "Operations Manager"
+  },
+  {
+    category: "Project Collaboration",
+    quote: "Communication around tasks and revisions was clear. The work covered website updates and creative tasks, with feedback and project requirements taken into consideration.",
+    role: "Project Coordinator"
+  }
+];
+---
+<section id="testimonials" class="py-24 px-6 border-t border-[var(--border-color)]">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="font-mono text-xs uppercase tracking-widest text-brand-red">Client Testimonials</span>
+      <h2 class="font-display text-4xl md:text-5xl font-black tracking-tight mt-2">
+        Experiences Across Digital Projects
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {testimonials.map((item) => (
+        <div class="group p-8 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-secondary)] hover:border-brand-red hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-xs text-brand-red uppercase tracking-wider">{item.category}</span>
+            <blockquote class="mt-4 text-base opacity-90 leading-relaxed italic">
+              "{item.quote}"
+            </blockquote>
+          </div>
+          <div class="mt-6 pt-4 border-t border-[var(--border-color)] font-mono text-xs opacity-60">
+            — {item.role}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
