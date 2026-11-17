@@ -9,9 +9,11 @@
   const langToggle = document.getElementById('lang-toggle');
   const langLabel = document.getElementById('lang-label');
 
-  // التحقق من اللغة المحفوظة أو اتجاه الصفحة الحالي
-  const currentLang = document.documentElement.getAttribute('lang') || 'en';
-  if (currentLang === 'ar') {
+  // تحديد اللغة الحالية بناءً على مسار الصفحة الحالي (URL)
+  const pathname = window.location.pathname;
+  const isArabic = pathname.includes('/ar');
+
+  if (isArabic) {
     document.documentElement.setAttribute('dir', 'rtl');
     document.documentElement.setAttribute('lang', 'ar');
     if (langLabel) langLabel.textContent = 'EN';
@@ -22,17 +24,15 @@
   }
 
   langToggle?.addEventListener('click', () => {
-    const isAr = document.documentElement.getAttribute('lang') === 'ar';
-    if (isAr) {
-      document.documentElement.setAttribute('lang', 'en');
-      document.documentElement.setAttribute('dir', 'ltr');
-      localStorage.setItem('lang', 'en');
-      window.location.href = '/Web3/';
+    // تحديد القاعدة الأساسية للموقع (Base Path) لـ GitHub Pages وهي /Web3/
+    const basePath = '/Web3';
+    
+    if (isArabic) {
+      // العودة للنسخة الإنجليزية
+      window.location.href = basePath + '/';
     } else {
-      document.documentElement.setAttribute('lang', 'ar');
-      document.documentElement.setAttribute('dir', 'rtl');
-      localStorage.setItem('lang', 'ar');
-      window.location.href = '/Web3/ar/';
+      // الانتقال للنسخة العربية (تأكد من وجود مجلد ar أو صفحة ar)
+      window.location.href = basePath + '/ar/';
     }
   });
 </script>
