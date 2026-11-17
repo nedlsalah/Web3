@@ -1,0 +1,30 @@
+{
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "work": "Work",
+    "skills": "Skills",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "NedlSalah",
+    "title": "Digital Marketing Specialist & Web Developer",
+    "description": "Building high-performance websites and running data-driven digital marketing campaigns.",
+    "ctaWork": "View Work",
+    "ctaContact": "Get in Touch"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "What I do best"
+  },
+  "work": {
+    "title": "Featured Work",
+    "subtitle": "Projects I've built and managed"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Let's build something amazing together"
+  }
+}
