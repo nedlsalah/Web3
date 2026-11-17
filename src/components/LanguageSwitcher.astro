@@ -1,0 +1,38 @@
+---
+// src/components/LanguageSwitcher.astro
+---
+<button id="lang-toggle" aria-label="Switch Language" class="px-3 py-2 rounded-xl border border-[var(--border-color)] bg-[var(--bg-secondary)] hover:border-brand-red hover:text-brand-red font-mono text-xs uppercase transition-all cursor-pointer">
+  <span id="lang-label">AR</span>
+</button>
+
+<script>
+  const langToggle = document.getElementById('lang-toggle');
+  const langLabel = document.getElementById('lang-label');
+
+  // التحقق من اللغة المحفوظة أو اتجاه الصفحة الحالي
+  const currentLang = document.documentElement.getAttribute('lang') || 'en';
+  if (currentLang === 'ar') {
+    document.documentElement.setAttribute('dir', 'rtl');
+    document.documentElement.setAttribute('lang', 'ar');
+    if (langLabel) langLabel.textContent = 'EN';
+  } else {
+    document.documentElement.setAttribute('dir', 'ltr');
+    document.documentElement.setAttribute('lang', 'en');
+    if (langLabel) langLabel.textContent = 'AR';
+  }
+
+  langToggle?.addEventListener('click', () => {
+    const isAr = document.documentElement.getAttribute('lang') === 'ar';
+    if (isAr) {
+      document.documentElement.setAttribute('lang', 'en');
+      document.documentElement.setAttribute('dir', 'ltr');
+      localStorage.setItem('lang', 'en');
+      window.location.href = '/Web3/';
+    } else {
+      document.documentElement.setAttribute('lang', 'ar');
+      document.documentElement.setAttribute('dir', 'rtl');
+      localStorage.setItem('lang', 'ar');
+      window.location.href = '/Web3/ar/';
+    }
+  });
+</script>
