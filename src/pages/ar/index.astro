@@ -1,0 +1,38 @@
+---
+// src/pages/ar/index.astro
+import '../styles/global.css'; // تأكد من مطابقة مسار ملف الـ CSS لديك
+import Navigation from '../../components/Navigation.astro';
+import Hero from '../../components/Hero.astro';
+import Services from '../../components/Services.astro';
+import Work from '../../components/Work.astro';
+import Skills from '../../components/Skills.astro';
+import Experience from '../../components/Experience.astro';
+import Credentials from '../../components/Credentials.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import Contact from '../../components/Contact.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<html lang="ar" dir="rtl" class="dark">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/Web3/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<title>NedlSalah — مطور ويب ومختص تسويق رقمي</title>
+	</head>
+	<body class="bg-[var(--bg-primary)] text-[var(--text-primary)] antialiased selection:bg-brand-red selection:text-white">
+		<Navigation />
+		<main>
+			<Hero />
+			<Services />
+			<Work />
+			<Skills />
+			<Experience />
+			<Credentials />
+			<Testimonials />
+			<Contact />
+		</main>
+		<Footer />
+	</body>
+</html>
